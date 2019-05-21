@@ -23,7 +23,7 @@ tf.flags.DEFINE_string("negative_data_file", "./data/CR-data/negative", "Data so
 # Model Hyperparameters
 tf.flags.DEFINE_integer("embedding_dim", 300, "Dimensionality of character embedding")
 tf.flags.DEFINE_string("filter_sizes", "1,2,3,4,5", "Comma-separated filter sizes")
-tf.flags.DEFINE_integer("num_filters", 50, "Number of filters per filter size")
+tf.flags.DEFINE_integer("num_filters", 100, "Number of filters per filter size")
 tf.flags.DEFINE_float("dropout_keep_prob", 0.5, "Dropout keep probability")
 tf.flags.DEFINE_float("l2_reg_lambda", 0.0, "L2 regularization lambda")
 
