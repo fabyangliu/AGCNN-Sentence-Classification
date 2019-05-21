@@ -29,12 +29,8 @@ class TextCNN(object):
 
         # Embedding layer
         with tf.device('/cpu:0'), tf.name_scope("embedding"):
-            #self.W = tf.Variable(
-                #tf.random_uniform([vocab_size, embedding_size], -1.0, 1.0),
-                #name="W")
             #self.W_1 = tf.Variable(tf.truncated_normal([vocab_size, embedding_size], stddev= 0.05), trainable = True)
             self.W_1 = tf.Variable(tf.truncated_normal([vocab_size, embedding_size], stddev= math.sqrt(1.0/(vocab_size*embedding_size))), trainable = True)
-            #self.W_3 = tf.Variable(tf.truncated_normal([vocab_size, embedding_size], stddev= math.sqrt(1.0/(vocab_size*embedding_size))), trainable = True)
 
             self.embedded_chars_1 = tf.nn.embedding_lookup(self.W_1, self.input_x)
             self.embedded_chars_expanded = tf.expand_dims(self.embedded_chars_1, -1)#[batch_size,sequence_length,embedding_size,1]
